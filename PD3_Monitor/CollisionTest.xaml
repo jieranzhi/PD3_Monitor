@@ -1,0 +1,50 @@
+﻿<Window x:Name="Collision_test_window" x:Class="PD3_Monitor.CollisionTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PD3_Monitor"
+        mc:Ignorable="d"
+        Title="Collision Test" Height="588" Width="675" Background="Black" MaxWidth="675" MaxHeight="588" ResizeMode="CanMinimize" Closing="Collision_test_window_Closing" Closed="Collision_test_window_Closed">
+    <Grid Background="#FF0E0E0F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="384*"/>
+            <RowDefinition Height="92*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image" Grid.Column="1" Grid.Row="1" Source="Resources/cars.png" OpacityMask="Black"/>
+        <StackPanel x:Name="sp_topleft" HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="78" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_top" Grid.Column="1" HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="190" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_topright" Grid.Column="2" HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="85" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_left" HorizontalAlignment="Left" Height="385" Grid.Row="1" VerticalAlignment="Top" Width="78" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_right" Grid.Column="2" HorizontalAlignment="Left" Height="385" Grid.Row="1" VerticalAlignment="Top" Width="85" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_bottomleft" HorizontalAlignment="Left" Height="93" Grid.Row="2" VerticalAlignment="Top" Width="78" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_bottom" Grid.Column="1" HorizontalAlignment="Left" Height="93" Grid.Row="2" VerticalAlignment="Top" Width="190" OpacityMask="Black" Background="Black"/>
+        <StackPanel x:Name="sp_bottomright" Grid.Column="2" HorizontalAlignment="Left" Height="93" Grid.Row="2" VerticalAlignment="Top" Width="85" OpacityMask="Black" Background="Black"/>
+        <Label x:Name="label" Content="Threshold:" Grid.Column="3" HorizontalAlignment="Left" Margin="11,18,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="textBox_collision_threshold" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="81,21,0,0" TextWrapping="Wrap" Text="0.4,0.4,1.5" VerticalAlignment="Top" Width="145" TextAlignment="Center"/>
+        <Button x:Name="button_collision_changethreshold" Content="Apply" Grid.Column="3" HorizontalAlignment="Left" Margin="231,21,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="button_collision_changethreshold_Click" RenderTransformOrigin="0.88,0.435"/>
+        <TextBox x:Name="textBox_collision_record" Grid.Column="3" HorizontalAlignment="Left" Height="379" Margin="16,52,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Foreground="White" Background="Black" VerticalScrollBarVisibility="Auto" Grid.RowSpan="2"/>
+        <Button x:Name="button_topmost" Content="Topmost" Grid.Column="3" Margin="231,63,0,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="button_topmost_Click"/>
+        <Label x:Name="label1" Content="Collision Records:" Grid.Column="3" HorizontalAlignment="Left" Margin="16,22,0,0" VerticalAlignment="Top" Foreground="White" Height="25" Grid.Row="1" RenderTransformOrigin="0.243,0.464"/>
+        <Button x:Name="button_clear" Content="Clear" Grid.Column="3" Margin="151,63,0,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="button_clear_Click"/>
+        <Label x:Name="label_Copy" Content="Measurement" Grid.Column="3" HorizontalAlignment="Left" Margin="11,55,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="textBlock_measurement_info" Grid.Column="3" HorizontalAlignment="Left" Height="19" Margin="19,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" Foreground="#FFFFD30C" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.579"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.157"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+    </Grid>
+</Window>
